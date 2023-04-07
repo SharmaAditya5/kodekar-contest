@@ -1,0 +1,33 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int getSum(int a[],int i,int n)
+{
+    int sum=0;
+    for(;i<n;i++)
+    {
+        sum+=a[i];
+    }
+    return sum;
+}
+
+int main() {
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++)
+        cin>>a[i];
+    for(int i=1;i<n-1;i++)
+    {
+        if(getSum(a,0,i)==getSum(a,i+1,n))
+        {
+            cout<<i+1;
+            break;
+        }
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
