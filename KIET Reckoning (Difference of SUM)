@@ -1,0 +1,27 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int  reckoning(int n,int m)
+{
+    int Nsum=0,Dsum=0;
+    for(int i=1;i<=m;i++)
+    {
+        if(i%n==0)
+            Dsum+=i;
+        else
+            Nsum+=i;
+    }
+    return Nsum-Dsum;
+}
+
+int main() {
+    int n,m;
+    cin>>n;
+    cin>>m;
+    cout<<reckoning(n,m);
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
