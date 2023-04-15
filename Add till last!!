@@ -1,0 +1,39 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int sum_of_digit(int num)
+{
+    int sum=0;
+    while(num)
+    {
+        sum+=num%10;
+        num/=10;
+    }
+    return sum;
+}
+
+int count_digit(int num)
+{
+    int c=0;
+    while(num)
+    {
+        c++;
+        num/=10;
+    }
+    return c;
+}
+int main() {
+    int num,res=0;
+    cin>>num;
+    res=sum_of_digit(num);
+    while(count_digit(res)!=1)
+    {
+        res=sum_of_digit(res);
+    }
+    cout<<res;
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
