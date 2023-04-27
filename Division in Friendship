@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int m1=sc.nextInt();
+        int m2=sc.nextInt();
+        int s=m1<m2?m1:m2;
+        int r=0;
+        for(int i=s;i>=1;i--)
+        {
+            if((m1%1==0) && (m2%i)==0)
+            {
+                r=i;
+                break;
+            }
+        }
+        System.out.println(r);
+        
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
