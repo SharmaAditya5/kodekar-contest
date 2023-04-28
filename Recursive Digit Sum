@@ -1,0 +1,40 @@
+/*We define super digit of an integer  using the following rules:
+
+Given an integer, we need to find the super digit of the integer.
+
+If  has only  digit, then its super digit is .
+Otherwise, the super digit of  is equal to the super digit of the sum of the digits of .*/
+
+#include<stdio.h>
+int getSum(int n)
+{
+    int sum=0;
+        while(n>0)
+        {
+            sum+=n%10;
+            n/=10;
+        }
+        if(sum/10==0)
+            return sum;
+        return getSum(sum);
+}
+int sum(int n)
+{
+    int sum=0;
+        while(n>0)
+        {
+            sum+=n%10;
+            n/=10;
+        }
+    return sum;
+    
+}
+int main()
+{
+    int n,k;
+    scanf("%d %d",&n,&k);
+    int a=sum(n);
+    a=a*k;
+    printf("%d",getSum(a));
+    return 0;
+}
